@@ -85,3 +85,176 @@ body {
 .animate-twinkle {
   animation: twinkle 3s ease-in-out infinite;
 }
+
+@keyframes orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-reverse {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes shoot {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(-28deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(-62vw, 44vh, 0) rotate(-28deg);
+    opacity: 0;
+  }
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(6%, 4%, 0) scale(1.08);
+  }
+}
+
+@keyframes drift-reverse {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-6%, -3%, 0) scale(1.06);
+  }
+}
+
+@keyframes mist {
+  0%,
+  100% {
+    transform: translateX(-8%) scale(1);
+    opacity: 0.45;
+  }
+  50% {
+    transform: translateX(10%) scale(1.1);
+    opacity: 0.9;
+  }
+}
+
+@keyframes rise-spark {
+  0% {
+    transform: translateY(10px) scale(0.4);
+    opacity: 0;
+  }
+  22% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-96px) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-orbit {
+  animation: orbit 18s linear infinite;
+}
+
+.animate-orbit-reverse {
+  animation: orbit-reverse 28s linear infinite;
+}
+
+.animate-swirl {
+  animation: orbit 16s linear infinite;
+}
+
+.animate-swirl-reverse {
+  animation: orbit-reverse 24s linear infinite;
+}
+
+.animate-shoot {
+  animation: shoot linear infinite;
+}
+
+.animate-drift {
+  animation: drift 18s ease-in-out infinite;
+}
+
+.animate-drift-reverse {
+  animation: drift-reverse 22s ease-in-out infinite;
+}
+
+.animate-mist {
+  animation: mist 8s ease-in-out infinite;
+}
+
+.animate-rise-spark {
+  animation: rise-spark 3.6s ease-in infinite;
+}
+
+.animate-rise-in {
+  animation: rise-in 0.85s ease both;
+}
+
+.animate-spin-slow {
+  animation: orbit 46s linear infinite;
+}
+
+.animate-spin-slow-reverse {
+  animation: orbit-reverse 62s linear infinite;
+}
+
+.magic-card {
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    background-color 0.35s ease;
+}
+
+.magic-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(196, 181, 253, 0.55);
+  background-color: rgba(255, 255, 255, 0.06);
+  box-shadow:
+    0 16px 40px rgba(76, 29, 149, 0.35),
+    0 0 28px rgba(45, 212, 191, 0.14);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-shimmer,
+  .animate-pulse-glow,
+  .animate-twinkle,
+  .animate-orbit,
+  .animate-orbit-reverse,
+  .animate-swirl,
+  .animate-swirl-reverse,
+  .animate-shoot,
+  .animate-drift,
+  .animate-drift-reverse,
+  .animate-mist,
+  .animate-rise-spark,
+  .animate-rise-in,
+  .animate-spin-slow,
+  .animate-spin-slow-reverse {
+    animation: none;
+  }
+
+  .magic-card:hover {
+    transform: none;
+  }
+}

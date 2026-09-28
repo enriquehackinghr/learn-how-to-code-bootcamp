@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cinzel, Cormorant_Garamond } from "next/font/google";
+import { Cinzel, Cormorant_Garamond, Nunito } from "next/font/google";
 import "./globals.css";
 
 const cinzel = Cinzel({
@@ -14,6 +14,12 @@ const cormorant = Cormorant_Garamond({
   weight: ["400", "500", "600", "700"],
 });
 
+const nunito = Nunito({
+  variable: "--font-readable",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+});
+
 export const metadata: Metadata = {
   title: "Crystal Ball | Workforce Planning",
   description:
@@ -24,7 +30,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${cinzel.variable} ${cormorant.variable} h-full antialiased`}
+      className={`${cinzel.variable} ${cormorant.variable} ${nunito.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[#070512] text-[#e8e4f5]">
         {children}
