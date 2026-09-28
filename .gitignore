@@ -1,0 +1,9 @@
+# Crystal Ball app
+crystal-ball/node_modules/
+crystal-ball/.next/
+crystal-ball/out/
+crystal-ball/build/
+crystal-ball/.vercel/
+crystal-ball/.env*
+crystal-ball/*.log
+crystal-ball/.DS_Store
